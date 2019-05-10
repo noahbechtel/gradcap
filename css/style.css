@@ -1,0 +1,92 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  -webkit-perspective: 700px;
+          perspective: 700px;
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 66.66666%;
+  width: 100%;
+  background: #8457ab;
+  background: linear-gradient(180deg, #8457ab 0%, #ef7fbd 50%, #f6bca4 100%);
+  z-index: 1;
+  box-shadow: 0 1px 3px 1px #f6bca4;
+}
+
+.text {
+  z-index: 0;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateY(0deg) translateY(0);
+            transform: rotateY(0deg) translateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg) translateY(0);
+            transform: rotateY(-360deg) translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotateY(0deg) translateY(0);
+            transform: rotateY(0deg) translateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg) translateY(0);
+            transform: rotateY(-360deg) translateY(0);
+  }
+}
+.spinner {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: rotate 6000ms linear infinite;
+          animation: rotate 6000ms linear infinite;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -80px;
+  width: 300px;
+  height: 160px;
+}
+
+.triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -80px;
+  width: 300px;
+  height: 160px;
+  background-color: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #928DAB, #00d2ff);
+  -webkit-clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+          clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  z-index: 1;
+}
+
+.triangle2 {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}

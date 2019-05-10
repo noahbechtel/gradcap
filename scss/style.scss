@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  perspective: 700px;
+}
+
+.text{
+ width:100%;
+ text-align:center;
+  
+}
+canvas {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 66.66666%;
+  width: 100%;
+  background: rgb(132,87,171);
+  background: linear-gradient(180deg, 
+    rgba(132,87,171,1) 0%, 
+    rgba(239,127,189,1) 50%, 
+    rgba(246,188,164,1) 100%
+  );
+  z-index: 1;
+  box-shadow: 0 1px 3px 1px rgba(246,188,164,1);
+}
+.text {
+  z-index:0
+}
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg) translateY(0);
+  }
+  
+  to {
+    transform: rotateY(-360deg) translateY(0);
+  }
+}
+
+$width: 300;
+$height: 160;
+$left: $width / 2;
+$top: $height / 2;
+
+.spinner {
+  transform-style: preserve-3d;
+  animation: rotate 6000ms linear infinite;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-left: -#{$left}px;
+  margin-top: -#{$top}px;
+  width: #{$width}px;
+  height: #{$height}px;
+}
+
+.triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -#{$left}px;
+  margin-top: -#{$top}px;
+  width: #{$width}px;
+  height: #{$height}px;
+  background-color: rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #928DAB, #00d2ff);
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  z-index: 1;
+}
+
+.triangle2 {
+  transform: rotateY(90deg);
+}
